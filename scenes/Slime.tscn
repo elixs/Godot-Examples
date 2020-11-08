@@ -3,10 +3,10 @@
 [ext_resource path="res://sprites/Happy Slime Pack/Happy Slime.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Slime.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=29]
 radius = 7.0
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=30]
 resource_name = "attack"
 length = 0.5
 tracks/0/type = "value"
@@ -39,7 +39,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=31]
 resource_name = "dead"
 length = 0.4
 tracks/0/type = "value"
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "values": [ 77, 78, 79, 80 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=32]
 resource_name = "fall"
 length = 0.1
 tracks/0/type = "value"
@@ -71,7 +71,7 @@ tracks/0/keys = {
 "values": [ 33 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=33]
 resource_name = "hit"
 length = 0.3
 tracks/0/type = "value"
@@ -87,7 +87,7 @@ tracks/0/keys = {
 "values": [ 66, 67 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=34]
 length = 1.1
 loop = true
 tracks/0/type = "value"
@@ -103,7 +103,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=35]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -118,7 +118,7 @@ tracks/0/keys = {
 "values": [ 22 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=36]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -133,7 +133,7 @@ tracks/0/keys = {
 "values": [ 44 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=37]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -149,35 +149,35 @@ tracks/0/keys = {
 "values": [ 11, 12, 13, 14, 15, 16, 17, 18 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=38]
 animation = "attack"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=39]
 animation = "dead"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=40]
 animation = "fall"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=41]
 animation = "hit"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=42]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=15]
+[sub_resource type="AnimationNodeAnimation" id=43]
 animation = "jump"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=44]
 animation = "land"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=45]
 animation = "run"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
@@ -199,30 +199,30 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
 
-[sub_resource type="AnimationNodeStateMachine" id=30]
-states/attack/node = SubResource( 10 )
+[sub_resource type="AnimationNodeStateMachine" id=49]
+states/attack/node = SubResource( 38 )
 states/attack/position = Vector2( 33, 125 )
-states/dead/node = SubResource( 11 )
+states/dead/node = SubResource( 39 )
 states/dead/position = Vector2( 400, 384 )
-states/fall/node = SubResource( 12 )
+states/fall/node = SubResource( 40 )
 states/fall/position = Vector2( 595, 150 )
-states/hit/node = SubResource( 13 )
+states/hit/node = SubResource( 41 )
 states/hit/position = Vector2( 400, 294 )
-states/idle/node = SubResource( 14 )
+states/idle/node = SubResource( 42 )
 states/idle/position = Vector2( 211, 71 )
-states/jump/node = SubResource( 15 )
+states/jump/node = SubResource( 43 )
 states/jump/position = Vector2( 595, 71 )
-states/land/node = SubResource( 16 )
+states/land/node = SubResource( 44 )
 states/land/position = Vector2( 595, 223 )
-states/run/node = SubResource( 17 )
+states/run/node = SubResource( 45 )
 states/run/position = Vector2( 211, 178 )
-transitions = [ "idle", "run", SubResource( 18 ), "run", "idle", SubResource( 19 ), "jump", "fall", SubResource( 20 ), "fall", "land", SubResource( 21 ), "land", "idle", SubResource( 22 ), "land", "run", SubResource( 23 ), "idle", "attack", SubResource( 24 ), "attack", "idle", SubResource( 25 ), "run", "attack", SubResource( 26 ), "attack", "run", SubResource( 27 ), "run", "jump", SubResource( 28 ), "idle", "jump", SubResource( 29 ) ]
+transitions = [ "idle", "run", SubResource( 46 ), "run", "idle", SubResource( 19 ), "jump", "fall", SubResource( 47 ), "fall", "land", SubResource( 21 ), "land", "idle", SubResource( 22 ), "land", "run", SubResource( 23 ), "idle", "attack", SubResource( 24 ), "attack", "idle", SubResource( 25 ), "run", "attack", SubResource( 26 ), "attack", "run", SubResource( 27 ), "run", "jump", SubResource( 28 ), "idle", "jump", SubResource( 48 ) ]
 start_node = "idle"
-graph_offset = Vector2( -213, 55 )
+graph_offset = Vector2( -213, -2 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=31]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=50]
 
 [node name="Slime" type="KinematicBody2D"]
 collision_layer = 3
@@ -239,23 +239,23 @@ hframes = 11
 frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 29 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/attack = SubResource( 2 )
-anims/dead = SubResource( 3 )
-anims/fall = SubResource( 4 )
-anims/hit = SubResource( 5 )
-anims/idle = SubResource( 6 )
-anims/jump = SubResource( 7 )
-anims/land = SubResource( 8 )
-anims/run = SubResource( 9 )
+anims/attack = SubResource( 30 )
+anims/dead = SubResource( 31 )
+anims/fall = SubResource( 32 )
+anims/hit = SubResource( 33 )
+anims/idle = SubResource( 34 )
+anims/jump = SubResource( 35 )
+anims/land = SubResource( 36 )
+anims/run = SubResource( 37 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 30 )
+tree_root = SubResource( 49 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 31 )
+parameters/playback = SubResource( 50 )
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
 wait_time = 3.0

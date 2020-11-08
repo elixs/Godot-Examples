@@ -40,6 +40,10 @@ func _physics_process(delta):
 	# Acceleration aproximation
 	linear_vel.x = lerp(linear_vel.x, target_vel * SPEED, 0.5)
 	
+	# Attack
+	var attack = on_floor and Input.is_action_just_pressed("attack")
+	var attacking = attack or playback.get_current_node() == "attack"
+	
 	# Jump
 	jump_time += delta
 	if on_floor:
@@ -48,15 +52,14 @@ func _physics_process(delta):
 	else:
 		if jump_time > MAX_JUMP_TIME:
 			can_jump = false
-		
-	if can_jump and Input.is_action_just_pressed("jump"):
+	
+	if not attacking and can_jump and Input.is_action_just_pressed("jump"):
 		can_jump = false
 		linear_vel.y = -SPEED * 2
 	
-	# Attack
-	var attacking = on_floor and Input.is_action_just_pressed("attack")
+
 	
-	if attacking or playback.get_current_node() == "attack":
+	if attacking:
 		linear_vel.x = 0
 	
 	# Animation
@@ -65,7 +68,7 @@ func _physics_process(delta):
 			playback.travel("run")
 		else:
 			playback.travel("idle")
-		if attacking:
+		if attack:
 			playback.travel("attack")
 	else:
 		if linear_vel.y > 0:

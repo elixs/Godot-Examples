@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Examples"
-run/main_scene="res://scenes/Raycast.tscn"
+run/main_scene="res://Raycast.tscn"
 config/icon="res://icon.png"
 
 [display]
