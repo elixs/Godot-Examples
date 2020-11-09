@@ -12,13 +12,17 @@ func fire():
 	var end = get_global_mouse_position()
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(start, end, [], 1)
+	
 	if result:
 		end = result.position
+		
+		# Apply impulse if colliding with rigid body
 		if result.collider is RigidBody2D:
 			var offset = end - result.collider.global_position
 			var impulse = (end - start).normalized() * 100
 			(result.collider as RigidBody2D).apply_impulse(offset, impulse)
-	
+		
+	# Show a line
 	$Line2D.points[0] = start
 	$Line2D.points[1] = end
 	$Line2D.show()
